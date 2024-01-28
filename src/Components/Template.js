@@ -7,7 +7,15 @@ import  UnfoldMoreIcon  from '@material-ui/icons/UnfoldMore'
 import blanck from '../Image/forms-blank-googlecolors.png'
 import partyinvite from '../Image/1m0UYQl1LSGxl3sGsh9_xjim4hUYQ8BO_zbvcFXv1Qug_400_1.png'
 import contact from '../Image/1xQF3s6EP0d58H-XJ7R440OpREKo4KqEapa0mkw43RPE_400_1.png'
+import {useNavigate } from 'react-router-dom'
+import uuid from 'react-uuid'
 function Template() {
+  const navigate=useNavigate();
+  const CreateForm=()=>{
+   const id=uuid();
+   
+  navigate("/form/"+id)
+  }
   return (
     <div className='template_section'>
         <div className="template_top">
@@ -25,7 +33,7 @@ function Template() {
             </div>
         </div>
         <div className="template_body">
-  <div className="card">
+  <div className="card" onClick={CreateForm}>
     <img src={blanck} alt="loading" className='card_image' />
     <p className='card_title'>Blank</p>
   </div>
